@@ -25,6 +25,13 @@ class SearchVC: UIViewController {
             alert.addAction(okAction)
             self.present(alert, animated: true, completion: nil)
         }
+        
+        DispatchQueue.main.async {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let connectionViewController = storyboard.instantiateViewController(withIdentifier: "connectionVC")
+            
+            self.navigationController?.pushViewController(connectionViewController, animated: true)
+        }
     }
     
     func areValuesValid() -> Bool{

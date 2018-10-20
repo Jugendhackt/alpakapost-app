@@ -100,16 +100,28 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--ConnectionsVC-->
         <scene sceneID="1dX-Eq-8Nj">
             <objects>
-                <viewController id="aZ1-gV-6ms" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="connectionVC" id="aZ1-gV-6ms" customClass="ConnectionsVC" customModule="Alpaka_Post" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1CH-0c-N2S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="4Or-LJ-ebw">
+                                <rect key="frame" x="177.5" y="55" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4Or-LJ-ebw" firstAttribute="top" secondItem="2uQ-mQ-jcO" secondAttribute="top" constant="35" id="QHd-E1-1fK"/>
+                            <constraint firstItem="4Or-LJ-ebw" firstAttribute="centerX" secondItem="2uQ-mQ-jcO" secondAttribute="centerX" id="vG7-7A-OMr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2uQ-mQ-jcO"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="4Or-LJ-ebw" id="hiP-et-SzP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcq-AH-dgz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
