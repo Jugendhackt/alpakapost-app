@@ -28,9 +28,11 @@ class SearchVC: UIViewController {
         
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let connectionViewController = storyboard.instantiateViewController(withIdentifier: "connectionVC")
+            let connectionViewController: ConnectionsVC = storyboard.instantiateViewController(withIdentifier: "connectionVC") as! ConnectionsVC
             
             self.navigationController?.pushViewController(connectionViewController, animated: true)
+            
+            connectionViewController.displayData(connections: [[Ride]]())
         }
     }
     

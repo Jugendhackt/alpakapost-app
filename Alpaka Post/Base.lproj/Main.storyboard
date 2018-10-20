@@ -111,21 +111,30 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="4Or-LJ-ebw">
                                 <rect key="frame" x="177.5" y="55" width="20" height="20"/>
                             </activityIndicatorView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RcJ-ts-wSh">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="2uQ-mQ-jcO" firstAttribute="bottom" secondItem="RcJ-ts-wSh" secondAttribute="bottom" id="A7D-CJ-acg"/>
+                            <constraint firstItem="RcJ-ts-wSh" firstAttribute="top" secondItem="2uQ-mQ-jcO" secondAttribute="top" id="Ohz-oI-hDZ"/>
+                            <constraint firstItem="2uQ-mQ-jcO" firstAttribute="trailing" secondItem="RcJ-ts-wSh" secondAttribute="trailing" id="Pa7-Xv-Nqc"/>
                             <constraint firstItem="4Or-LJ-ebw" firstAttribute="top" secondItem="2uQ-mQ-jcO" secondAttribute="top" constant="35" id="QHd-E1-1fK"/>
+                            <constraint firstItem="RcJ-ts-wSh" firstAttribute="leading" secondItem="2uQ-mQ-jcO" secondAttribute="leading" id="kdK-2w-Smv"/>
                             <constraint firstItem="4Or-LJ-ebw" firstAttribute="centerX" secondItem="2uQ-mQ-jcO" secondAttribute="centerX" id="vG7-7A-OMr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2uQ-mQ-jcO"/>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="4Or-LJ-ebw" id="hiP-et-SzP"/>
+                        <outlet property="connectionTable" destination="RcJ-ts-wSh" id="iw6-VG-awg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcq-AH-dgz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1118" y="134"/>
+            <point key="canvasLocation" x="1117.5999999999999" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>

@@ -11,34 +11,45 @@ import UIKit
 class ConnectionsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    var connectionTable = UITableView()
-    var connection :[Int] = []
+    @IBOutlet weak var connectionTable: UITableView!
+    var connections :[[Ride]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
         
-        self.connectionTable = UITableView()
+        
         self.connectionTable.delegate = self
         self.connectionTable.dataSource = self
         self.connectionTable.register(UITableViewCell.self, forCellReuseIdentifier: "connectionCell")
     }
     
-    func displayData(){
-        activityIndicator.isHidden = true
-        activityIndicator.stopAnimating()
+    func displayData(connections: [[Ride]]){
+//        activityIndicator.isHidden = true
+//        activityIndicator.stopAnimating()
         
-        
+        self.connections = connections
+        self.connectionTable.reloadData()
+        self.view.addSubview(connectionTable)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return self.connections.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "connectionCell")!
-        cell.textLabel?.text = "Connection #\(indexPath.row)"
+        
+        let connection = self.connections[indexPath.row]
+        var title = ""
+        for ride in connection{
+            title += "\(ride.start) -> \(ride.destination), "
+        }
+        title.removeLast()
+        title.removeLast()
+        
+        cell.textLabel?.text = title
         return cell
     }
 }
