@@ -35,3 +35,28 @@ class Driver {
         self.id = id
     }
 }
+
+
+
+class MyPackage {
+    var connection: [Ride]
+    var stages: [TrackingStages]
+    
+    init(connection: [Ride], stages: [TrackingStages]) {
+        self.connection = connection
+        self.stages = stages
+    }
+}
+
+
+class TrackingStages {
+    var start: String
+    var status: String
+    var time: Date
+    
+    init(start: String, status: String, time: Double){
+        self.start = start
+        self.status = status
+        self.time = Date(timeIntervalSince1970: time)
+    }
+}

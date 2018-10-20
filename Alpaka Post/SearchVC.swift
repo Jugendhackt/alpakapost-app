@@ -16,6 +16,8 @@ class SearchVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var volunteerBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -27,6 +29,8 @@ class SearchVC: UIViewController, UITextFieldDelegate {
         
         startTextField.delegate = self
         destTextField.delegate = self
+        
+        self.volunteerBtn.isHidden = !Client.shared.anythingToVolunteer()
     }
 
     @IBAction func searchBtnPressed(_ sender: UIButton) {

@@ -20,8 +20,12 @@ class Client {
     var destination: String = ""
     
     private var saved_packages :[PackageDelivery]?
+    private var saved_myPackages: [MyPackage]?
     
     var rides :[Ride] = []
+    
+    var possibleVolunteeringCauses :[PackageDelivery] = []
+    var volunteeringCauses :[PackageDelivery] = []
     
     let baseURL = "http://100.100.255.49:8080/"
     
@@ -77,6 +81,20 @@ class Client {
                 }
             }
             return self.saved_packages!
+        }
+    }
+    
+    func anythingToVolunteer() -> Bool{
+        self.possibleVolunteeringCauses = []
+        return false
+    }
+    
+    var myparcels: [MyPackage] {
+        get{
+            if self.saved_myPackages == nil{
+                //get all that stuff
+            }
+            return self.saved_myPackages!
         }
     }
     
