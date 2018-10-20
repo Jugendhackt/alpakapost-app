@@ -19,7 +19,7 @@ class  Ride {
     init(start: String, destination: String, startTime: Double, duration: Double, driverName: String, driverID: Int){
         self.start = start
         self.destination = destination
-        self.date = Date(timeIntervalSince1970: startTime)
+        self.startTime = Date(timeIntervalSince1970: startTime)
         self.duration = duration
         self.driver = Driver(name: driverName, id: driverID)
     }
