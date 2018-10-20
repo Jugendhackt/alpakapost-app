@@ -26,13 +26,14 @@ class SearchVC: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
         
+        Client.shared.start = self.startTextField.text!
+        Client.shared.destination = self.destTextField.text!
+        
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let connectionViewController: ConnectionsVC = storyboard.instantiateViewController(withIdentifier: "connectionVC") as! ConnectionsVC
             
             self.navigationController?.pushViewController(connectionViewController, animated: true)
-            
-            connectionViewController.displayData(connections: [[Ride]]())
         }
     }
     

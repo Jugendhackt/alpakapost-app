@@ -14,6 +14,7 @@
 		B00FBEEB217B26AF00C175DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B00FBEE9217B26AF00C175DC /* LaunchScreen.storyboard */; };
 		B00FBEF3217B2F7400C175DC /* ConnectionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00FBEF2217B2F7400C175DC /* ConnectionsVC.swift */; };
 		B00FBEF5217B383C00C175DC /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00FBEF4217B383C00C175DC /* Connection.swift */; };
+		B00FBEF7217B734B00C175DC /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00FBEF6217B734B00C175DC /* Client.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B00FBEEC217B26AF00C175DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B00FBEF2217B2F7400C175DC /* ConnectionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionsVC.swift; sourceTree = "<group>"; };
 		B00FBEF4217B383C00C175DC /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		B00FBEF6217B734B00C175DC /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				B00FBEF2217B2F7400C175DC /* ConnectionsVC.swift */,
 				B00FBEF4217B383C00C175DC /* Connection.swift */,
 				B00FBEE2217B26AE00C175DC /* SearchVC.swift */,
+				B00FBEF6217B734B00C175DC /* Client.swift */,
 				B00FBEE4217B26AE00C175DC /* Main.storyboard */,
 				B00FBEE7217B26AF00C175DC /* Assets.xcassets */,
 				B00FBEE9217B26AF00C175DC /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 				B00FBEE3217B26AE00C175DC /* SearchVC.swift in Sources */,
 				B00FBEF3217B2F7400C175DC /* ConnectionsVC.swift in Sources */,
 				B00FBEE1217B26AE00C175DC /* AppDelegate.swift in Sources */,
+				B00FBEF7217B734B00C175DC /* Client.swift in Sources */,
 				B00FBEF5217B383C00C175DC /* Connection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

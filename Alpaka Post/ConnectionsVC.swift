@@ -23,11 +23,15 @@ class ConnectionsVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         self.connectionTable.delegate = self
         self.connectionTable.dataSource = self
         self.connectionTable.register(UITableViewCell.self, forCellReuseIdentifier: "connectionCell")
+        
+        let client = Client.shared
+        let connections = client.getConnections(from: client.start, to: client.destination)
+        displayData(connections: connections)
     }
     
     func displayData(connections: [[Ride]]){
-//        activityIndicator.isHidden = true
-//        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
+        activityIndicator.stopAnimating()
         
         self.connections = connections
         self.connectionTable.reloadData()
