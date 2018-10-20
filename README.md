@@ -6,7 +6,7 @@ $ brew install cocoapods
 ```
 Before compiling make sure you run
 ```
-$ pods install
+$ pod install
 ```
 
 # JSON Formats
