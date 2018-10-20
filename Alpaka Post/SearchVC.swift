@@ -7,14 +7,23 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
 
 class SearchVC: UIViewController {
     @IBOutlet weak var startTextField: UITextField!
     @IBOutlet weak var destTextField: UITextField!
     
+    @IBOutlet weak var mapView: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let hackspaces = Client.shared.getHackerspaces()
+        for hackspace in hackspaces {
+            addHackspace(hackspace: hackspace)
+        }
     }
 
     @IBAction func searchBtnPressed(_ sender: UIButton) {
@@ -42,6 +51,15 @@ class SearchVC: UIViewController {
             return true
         }
         return false
+    }
+    
+    func addHackspace(hackspace: Hackerspace){
+        let hackspaceAnnotation = MKPointAnnotation()
+        hackspaceAnnotation.coordinate = hackspace.location
+        hackspaceAnnotation.title = hackspace.name
+        
+        self.mapView.addAnnotation(hackspaceAnnotation)
+        self.mapView.selectAnnotation(hackspaceAnnotation, animated: true)
     }
     
 }

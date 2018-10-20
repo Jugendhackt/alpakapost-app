@@ -44,14 +44,11 @@ class ConnectionsVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "connectionCell")!
-        
         let connection = self.connections[indexPath.row]
-        var title = ""
-        for ride in connection{
-            title += "\(ride.start) -> \(ride.destination), "
-        }
-        title.removeLast()
-        title.removeLast()
+        
+        let dateOfArrival = connection.last?.startTime.addingTimeInterval((connection.last?.duration)!)
+        
+        let title = "Arrival: "
         
         cell.textLabel?.text = title
         return cell
