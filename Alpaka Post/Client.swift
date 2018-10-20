@@ -21,7 +21,9 @@ class Client {
     
     private var saved_packages :[PackageDelivery]?
     
-    let baseURL = "http://100.100.202.162:8080/"
+    var rides :[Ride] = []
+    
+    let baseURL = "http://100.100.255.49:8080/"
     
     func getConnections(from: String, to: String) -> [[Ride]] {
         return [[Ride(start: "Berlin", destination: "Leipzig", startTime: 34573475, duration: 23409, driverName: "Paul", driverID: 30), Ride(start: "Leipzig", destination: "München", startTime: 3471924982, duration: 345834, driverName: "Josef", driverID: 35968)], [Ride(start: "Berlin", destination: "Köln", startTime: 9248572895, duration: 23540, driverName: "Manuel", driverID: 023234), Ride(start: "Köln", destination: "Kiel", startTime: 3494598, duration: 4985, driverName: "Robert", driverID: 2349), Ride(start: "Kiel", destination: "München", startTime: 0293409, duration: 234099, driverName: "Hebert", driverID: 0349)]]
@@ -77,4 +79,5 @@ class Client {
             return self.saved_packages!
         }
     }
+    
 }

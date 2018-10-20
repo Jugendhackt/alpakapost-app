@@ -1,3 +1,14 @@
+# Cocoapods
+The download of Cocoapods is required in order to compile this app.
+You can simply do this by executing:
+```
+$ brew install cocoapods
+```
+Before compiling make sure you run
+```
+$ pods install
+```
+
 # JSON Formats
 
 ## Returning possible connections

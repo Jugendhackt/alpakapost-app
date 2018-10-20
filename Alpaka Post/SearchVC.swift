@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class SearchVC: UIViewController {
+class SearchVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var startTextField: UITextField!
     @IBOutlet weak var destTextField: UITextField!
     
@@ -24,6 +24,9 @@ class SearchVC: UIViewController {
         for hackspace in hackspaces {
             addHackspace(hackspace: hackspace)
         }
+        
+        startTextField.delegate = self
+        destTextField.delegate = self
     }
 
     @IBAction func searchBtnPressed(_ sender: UIButton) {
@@ -60,6 +63,11 @@ class SearchVC: UIViewController {
         
         self.mapView.addAnnotation(hackspaceAnnotation)
         self.mapView.selectAnnotation(hackspaceAnnotation, animated: true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
 }

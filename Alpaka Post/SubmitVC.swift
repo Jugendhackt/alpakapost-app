@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SubmitVC: UIViewController {
+class SubmitVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var startTextField: UITextField!
     @IBOutlet weak var destinationTextField: UITextField!
     @IBOutlet weak var durationTextView: UITextField!
@@ -21,6 +21,10 @@ class SubmitVC: UIViewController {
         
         confirmBtn.layer.cornerRadius = 5
         confirmBtn.layer.masksToBounds = false
+        
+        startTextField.delegate = self
+        destinationTextField.delegate = self
+        durationTextView.delegate = self
     }
     
     @IBAction func submitted(_ sender: UIButton) {
@@ -30,4 +34,8 @@ class SubmitVC: UIViewController {
         let startDate = startDatePicker.date
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
