@@ -9,7 +9,7 @@
 import UIKit
 
 class DeliverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    let tableView = UITableView()
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,62 +21,60 @@ class DeliverVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        var sections = 0
-        
-        if Client.shared.myparcels.count != 0 {
-            sections += 1
-        }
-        
-        if Client.shared.volunteeringCauses.count != 0 {
-            sections += 1
-        }
-        
-        if Client.shared.possibleVolunteeringCauses.count != 0 {
-            sections += 1
-        }
-        
-        if sections == 0 {
-            let alert = UIAlertController(title: "Nothing To Show", message: "There is no package you sent, deliverd or you were invited to deliver.", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
-                self.navigationController?.popViewController(animated: true)
-            }
-            alert.addAction(okAction)
-            self.present(alert, animated: true, completion: nil)
-        }
-        
-        return sections
+//        var sections = 0
+//
+//        if Client.shared.myparcels.count != 0 {
+//            sections += 1
+//        }
+//
+//        if Client.shared.volunteeringCauses.count != 0 {
+//            sections += 1
+//        }
+//
+//        if Client.shared.possibleVolunteeringCauses.count != 0 {
+//            sections += 1
+//        }
+//
+//        if sections == 0 {
+//            let alert = UIAlertController(title: "Nothing To Show", message: "There is no package you sent, deliverd or you were invited to deliver.", preferredStyle: .alert)
+//            let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+//                self.navigationController?.popViewController(animated: true)
+//            }
+//            alert.addAction(okAction)
+//            self.present(alert, animated: true, completion: nil)
+//        }
+//
+//        return sections
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return Client.shared.packages.count
-        }
-        return Client.shared.volunteeringCauses.count
+//        if section == 0 {
+//            return Client.shared.packages.count
+//        }
+//        return Client.shared.volunteeringCauses.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "package")!
         
-        if indexPath.section == 0 {
-            
-        } else {
-            
-        }
+        cell.textLabel?.text = "Hamburg -> Leipzig | Currently in Köln"
         
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0{
+        if section == 0 {
             return "Parcel Tracking"
         }
         
-        if section == 1{
+        if section == 1 {
             return "Volunteering Transport"
         }
         
-        if section == 2{
+        if section == 2 {
             return "Pending Volunteering Invitation"
         }
         
